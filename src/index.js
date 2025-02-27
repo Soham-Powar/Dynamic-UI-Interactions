@@ -7,16 +7,24 @@ const slide = document.querySelector('.slide');
 
 const slideWidth = parseInt(window.getComputedStyle(slide)
 	.getPropertyValue('width'));
+const noOfSlides = carouselTrack.childElementCount;
 
 prevBtn.addEventListener('click', () => {
-    const leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
+    let leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
 		.getPropertyValue('left'));
-	console.log(slideWidth);
+
+	if(leftPropValue === 0) {
+		leftPropValue = -noOfSlides * slideWidth;
+	}
     carouselTrack.style.left = (leftPropValue + slideWidth) + 'px';
 });
 
 nextBtn.addEventListener('click', () => {
-    const leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
+    let leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
 		.getPropertyValue('left'));
+
+	if(leftPropValue === (-(noOfSlides - 1) * slideWidth)) {
+		leftPropValue = slideWidth;
+	};
     carouselTrack.style.left = (leftPropValue - slideWidth) + 'px';
 });

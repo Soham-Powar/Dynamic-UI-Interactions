@@ -78,19 +78,23 @@ body {
 	background-color: pink;
 }
 
+.carousel-container {
+	padding: 100px;
+	background-color: rebeccapurple;
+}
+
 .carousel {
 	width: 500px;
-	/* overflow: hidden; */
+	overflow: hidden;
 	background-color: red;
 }
 
 .carousel-track {
 	display: flex;
 	position: relative;
-	left: -500px;
 }
-
 
 .slide {
 	width: 500px;
+	background-color: green;
 }
