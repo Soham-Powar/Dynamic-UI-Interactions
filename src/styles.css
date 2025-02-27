@@ -103,10 +103,19 @@ body {
 }
 
 .dot-div {
-	background-color: pink;
+	background-color: white;
 	border-radius: 50%;
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
+}
+
+.dot-div:hover {
+	background-color: black;
+	cursor: pointer;
+}
+
+.active-dot {
+	background-color: grey;
 }
 
 .slide {

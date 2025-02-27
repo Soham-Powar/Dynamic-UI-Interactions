@@ -8,6 +8,9 @@ export default function () {
 		const div = document.createElement('div');
 		div.classList.add('dot-div');
 		div.setAttribute('dot-number', index);
+		if(index === 0) {
+			div.classList.add('active-dot');
+		}
 		handleDotClick(div);
 		dotsContainer.appendChild(div);
 	}

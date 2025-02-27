@@ -1,3 +1,5 @@
+import setActiveDot from "./setActiveDot";
+
 const carouselTrack = document.querySelector('.carousel-track');
 const slide = document.querySelector('.slide');
 const slideWidth = parseInt(window.getComputedStyle(slide)
@@ -5,7 +7,8 @@ const slideWidth = parseInt(window.getComputedStyle(slide)
 
 export default function (div) {
 	div.addEventListener('click', () => {
-		const dotNumber = div.getAttribute('dot-number');
+		const dotNumber = parseInt(div.getAttribute('dot-number'));
 		carouselTrack.style.left = (-(dotNumber) * slideWidth) + 'px';
+		setActiveDot(dotNumber);
 	});
 }
