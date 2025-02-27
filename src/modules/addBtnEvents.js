@@ -1,13 +1,12 @@
+const carouselTrack = document.querySelector('.carousel-track');
+const slide = document.querySelector('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const slideWidth = parseInt(window.getComputedStyle(slide)
+	.getPropertyValue('width'));
+const noOfSlides = carouselTrack.childElementCount;
+
 export default function () {
-	const prevBtn = document.querySelector('.prev');
-	const nextBtn = document.querySelector('.next');
-	const carouselTrack = document.querySelector('.carousel-track');
-	const slide = document.querySelector('.slide');
-
-	const slideWidth = parseInt(window.getComputedStyle(slide)
-		.getPropertyValue('width'));
-	const noOfSlides = carouselTrack.childElementCount;
-
 	prevBtn.addEventListener('click', () => {
 		let leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
 			.getPropertyValue('left'));

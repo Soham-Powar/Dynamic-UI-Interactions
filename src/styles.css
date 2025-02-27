@@ -94,7 +94,21 @@ body {
 	position: relative;
 }
 
+.dots-container {
+	display: flex;
+	padding: 10px 0px;
+	background-color: green;
+	gap: 10px;
+	justify-content: center;
+}
+
+.dot-div {
+	background-color: pink;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+}
+
 .slide {
 	width: 500px;
-	background-color: green;
 }
