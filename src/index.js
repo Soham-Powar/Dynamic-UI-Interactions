@@ -1,8 +1,8 @@
 import "./styles.css";
 import addBtnEvents from "./modules/addBtnEvents";
-import handleNavDots from "./modules/handleNavDots";
+import renderDots from "./modules/renderDots";
 
 document.addEventListener('DOMContentLoaded', () => {
 	addBtnEvents();
-	handleNavDots();
+	renderDots();
 });
