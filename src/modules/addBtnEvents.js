@@ -7,23 +7,29 @@ const slideWidth = parseInt(window.getComputedStyle(slide)
 const noOfSlides = carouselTrack.childElementCount;
 
 export default function () {
-	prevBtn.addEventListener('click', () => {
-		let leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
-			.getPropertyValue('left'));
+	prevBtn.addEventListener('click', movePrev);
+	nextBtn.addEventListener('click', moveNext);
 
-		if(leftPropValue === 0) {
-			leftPropValue = -noOfSlides * slideWidth;
-		}
-		carouselTrack.style.left = (leftPropValue + slideWidth) + 'px';
-	});
+	// Auto-slide every 5 seconds
+	setInterval(() => {
+		moveNext();
+	}, 5000);
+}
 
-	nextBtn.addEventListener('click', () => {
-		let leftPropValue = parseInt(window.getComputedStyle(carouselTrack)
-			.getPropertyValue('left'));
+function movePrev() {
+	let leftPropValue = parseInt(window.getComputedStyle(carouselTrack).getPropertyValue('left'));
 
-		if(leftPropValue === (-(noOfSlides - 1) * slideWidth)) {
-			leftPropValue = slideWidth;
-		};
-		carouselTrack.style.left = (leftPropValue - slideWidth) + 'px';
-	});
-};
+	if (leftPropValue === 0) {
+		leftPropValue = -noOfSlides * slideWidth;
+	}
+	carouselTrack.style.left = (leftPropValue + slideWidth) + 'px';
+}
+
+function moveNext() {
+	let leftPropValue = parseInt(window.getComputedStyle(carouselTrack).getPropertyValue('left'));
+
+	if (leftPropValue === (-(noOfSlides - 1) * slideWidth)) {
+		leftPropValue = slideWidth;
+	}
+	carouselTrack.style.left = (leftPropValue - slideWidth) + 'px';
+}
